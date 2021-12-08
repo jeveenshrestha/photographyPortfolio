@@ -1,0 +1,164 @@
+.screen_container {
+    padding: 60px 0;
+    min-height: 80vh;
+  }
+  
+  .slide {
+    position: relative;
+    width: 100%;
+    height: 65vw;
+    max-height: 1000px;
+    margin: 40px;
+  }
+  
+  .greySquare {
+    position: absolute;
+    right: 80px;
+    width: 65%;
+    height: 50%;
+    background-color: dimgray;
+  }
+  
+  .slide_image {
+    position: absolute;
+    width: 45%;
+    max-height: 100%;
+    max-width: 670px;
+    min-width: 334px;
+  }
+  
+  .title {
+    color: black;
+    position: relative;
+    text-align: right;
+    padding-right: 20px;
+  }
+  
+  /* BLOGS */
+  /* BLOGS */
+  /* BLOGS */
+  
+  .blogSlide {
+    background-color: black;
+    margin: 40px;
+    height: 1000px;
+    overflow: hidden;
+  }
+  
+  .blogSlide_image {
+    position: absolute;
+    right: 80px;
+    width: 70%;
+    max-height: 1000px;
+    max-width: 780px;
+  }
+  
+  .blogs_container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 80px;
+    flex-wrap: wrap;
+  }
+  
+  .blog_card {
+    background-color: grey;
+    z-index: 2;
+    margin: auto;
+    padding: 5px;
+  }
+  
+  .image_clipper {
+    height: 300px;
+    overflow: hidden;
+    background-color: grey;
+  }
+  
+  .blog_image {
+    width: 100%;
+    max-width: 250px;
+    min-width: 180px;
+    margin-top: -30px;
+  }
+  
+  .blog_card p {
+    text-align: center;
+    font-size: 1.2rem;
+    max-width: 250px;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    max-width: 250px;
+  }
+  
+  .link2 {
+    text-decoration: none;
+    position: absolute;
+    right: 10%;
+    color: black;
+    font-size: 1.3rem;
+    padding: 12px 30px;
+    margin-top: 100px;
+    background-color: grey;
+  }
+  /* GALLERY SLIDE */
+  /* GALLERY SLIDE */
+  /* GALLERY SLIDE */
+  
+  .imagesSlide_container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1500px;
+    margin: auto;
+    padding: 0;
+    justify-content: center;
+  }
+  
+  .imagesSlide_image {
+    padding: 60px 120px;
+    margin: 0;
+  }
+  
+  .imagesSlide_bottom {
+    width: 90%;
+    margin: auto;
+    border-bottom: 1px rgb(161, 161, 161) solid;
+  }
+  .actionSlide_container {
+    margin: 40px;
+    padding: 300px 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    background-image: url("../../assets/icons/bikes.jpg");
+  }
+  
+  .actionSlide_container h1 {
+    color: white;
+    margin: 0;
+    font-size: 4rem;
+    letter-spacing: 5px;
+    text-shadow: 4px 4px 4px black;
+  }
+  
+  .actionSlide_container h2 {
+    color: white;
+    letter-spacing: 3px;
+    text-shadow: 4px 4px 4px black;
+  }
+  .actionSlide_container button {
+    margin-top: 20px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    text-decoration: underline;
+    letter-spacing: 5px;
+  }
+  .actionSlide_container button:hover {
+    cursor: pointer;
+  }
+  
+  
