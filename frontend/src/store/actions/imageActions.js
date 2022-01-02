@@ -44,10 +44,10 @@ export const getImages = (pageNumber = '', pageSize = '') => async (dispatch) =>
 
 export const createImage = () => async (dispatch, getState) => {
     try {
-        dispatch({ type: CREATE_IMAGE_REQUEST});
+        dispatch({ type: CREATE_IMAGE_REQUEST });
 
         const {
-            userLogin: {userInfo},
+            userLogin: { userInfo },
         } = getState();
 
         const config = {
@@ -87,10 +87,11 @@ export const getImageDetails = (id) => async (dispatch, getState) => {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${userInfo.token}`,
+
             },
         }
 
-        const {data} = await axios.get(`http://localhost:5000/api/image/${id}`, config);
+        const { data } = await axios.get(`http://localhost:5000/api/image/${id}`);
 
         dispatch({
             type: IMAGE_DETAILS_SUCCESS,
@@ -124,7 +125,7 @@ export const deleteImage = (id) => async (dispatch, getState) => {
             },
         }
 
-        const {data} = await axios.delete(`http://localhost:5000/api/image/${id}`, config);
+        const { data } = await axios.delete(`http://localhost:5000/api/image/${id}`, config);
 
         dispatch({
             type: DELETE_IMAGE_SUCCESS,
@@ -158,7 +159,7 @@ export const updateImage = (image) => async (dispatch, getState) => {
             },
         }
 
-        const {data} = await axios.put(`http://localhost:5000/api/image/${image._id}`, image, config);
+        const { data } = await axios.put(`http://localhost:5000/api/image/${image._id}`, image, config);
 
         dispatch({
             type: UPDATE_IMAGE_SUCCESS,

@@ -29,28 +29,28 @@ const AdminScreen = (props) => {
     const imageDelete = useSelector((state) => state.imageDelete);
     const { loading: loadinImageDelete, success: successImageDelete } = imageDelete;
 
-    const createImageHandler = (e) => { 
+    const createImageHandler = (e) => {
         e.preventDefault();
         dispatch(createImage());
     };
 
-    const logoutHandler = (e) => { 
+    const logoutHandler = (e) => {
         e.preventDefault();
         dispatch(logout());
         history.push('/login');
     };
 
-    const deleteImageHandler = (id) => { 
-        if(window.confirm('Are you sure ?')) {
+    const deleteImageHandler = (id) => {
+        if (window.confirm('Are you sure ?')) {
             dispatch(deleteImage(id));
         }
     };
 
     const editImageHandler = (id) => {
-        if(id) {
+        if (id) {
             history.push(`/admin/image/${id}/edit`);
         }
-     };
+    };
 
     useEffect(() => {
         dispatch({ type: CREATE_IMAGE_RESET })
@@ -81,7 +81,7 @@ const AdminScreen = (props) => {
                 ) : (
                     gallery.map((item, idx) => <div key={idx} className={classes.imageDetail_container}>
                         <p>{item.alt}</p>
-                        <img src={item.src[0]} alt={item.alt} />
+                        <img src={item.src[1]} alt={item.alt} width="300" height="auto" />
                         <button onClick={() => deleteImageHandler(item._id)}>Delete</button>
                         <button onClick={() => editImageHandler(item._id)}>Edit</button>
                     </div>

@@ -54,17 +54,24 @@ const getImageById = asyncHandler(async (req, res) => {
 // @access  Private / Admin
 
 const updateImage = asyncHandler(async (req, res) => {
-    const {src, alt, author} = req.body;
+
+    //we have new img obj, new src, new alt, new author
+    //using id get old img obj from database
+    //if available
+    //modify old img obj with new info
+    // save
+    //else throw error
+    const { src, alt, author } = req.body;
     const image = await Img.findById(req.params.id);
-    
-    if(image) {
+
+    if (image) {
         image.src = src ? src : image.src;
         image.alt = alt ? alt : image.alt;
         image.author = author ? author : image.author;
 
         const updatedImage = await image.save()
         res.json(updatedImage);
-    }else{
+    } else {
         res.status(404);
         throw new Error('Image not found');
     }
@@ -76,11 +83,11 @@ const updateImage = asyncHandler(async (req, res) => {
 
 const deleteImage = asyncHandler(async (req, res) => {
     const image = await Img.findById(req.params.id);
-    
-    if(image) {
+
+    if (image) {
         await image.remove()
-        res.json({message: 'Image removed'});
-    }else{
+        res.json({ message: 'Image removed' });
+    } else {
         res.status(404);
         throw new Error('Image not found');
     }

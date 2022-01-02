@@ -2,12 +2,14 @@ const path = require('path');
 
 const express = require('express');
 const multer = require('multer');
+const imageParser = require('../utils/imageParser');
 
 const router = express.Router();
 
 const storage = multer.diskStorage({
     destination(req, file, cb) {
-        cb(null, 'uploads/')
+        console.log(file);
+        cb(null, 'uploads')
     },
     filename(req, file, cb) {
         cb(
@@ -24,7 +26,7 @@ function checkFileType(file, cb) {
     if (extname && mimetype) {
         return cb(null, true)
     } else {
-        cb("Images only!")
+        return cb("Images only!")
     }
 };
 
@@ -35,9 +37,10 @@ const upload = multer({
     },
 });
 
-router.post('/api/upload', upload.single('image'), (req, res) => {
-    console.log(req);
-    res.send(`/${req.file.path}`)
+router.post('', upload.single('image'), async (req, res) => {
+    --inspect
+    const correctPath = req.file.path.replace(/\\/g, '/');
+    res.send(`/${correctPath}`);
 });
 
 module.exports = router;

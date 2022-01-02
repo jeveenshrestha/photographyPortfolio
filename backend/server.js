@@ -35,7 +35,7 @@ app.use("/api/upload", uploadRoutes);
 
 // Make uploads folder static
 const dirname = path.resolve();
-app.use('/uploads', express.static(path.join(dirname, "/uploads")));
+app.use('/uploads', express.static(path.join(dirname, "uploads")));
 
 // Middleware
 app.use(notFound);

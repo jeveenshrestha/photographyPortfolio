@@ -48,7 +48,7 @@ const EditBlogScreen = ({ match, history }) => {
         },
         image: {
             type: 'input',
-            config: { type: "text", placeholder: 'Blog image' },
+            config: { type: "file", placeholder: 'Blog image' },
         },
         content: {
             type: 'textarea',

@@ -76,7 +76,7 @@ const EditImageScreen = (props) => {
 
             const { data } = await axios.post("http://localhost:5000/api/upload", formData, config);
 
-            imagesArray.push(data);
+            imagesArray.push(`http://localhost:5000${data}`);
             setImages(imagesArray);
             setUploading(false);
 
@@ -141,7 +141,7 @@ const EditImageScreen = (props) => {
                         ))}
                     <input type='file' onChange={uploadFileHandler} name={images} />
                     {uploading && <div>...loading...</div>}
-                    <button type="submit">Submit</button>
+                    <input type="submit" value="Submit" />
                 </form>
             }
 

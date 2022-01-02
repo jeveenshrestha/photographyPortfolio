@@ -60,8 +60,10 @@ const HomeScreen = () => {
                         <div key={idx}>
                             <img
                                 className={classes.imagesSlide_image}
-                                src={item.src[0]}
+                                src={item.src[1]}
                                 alt={item.alt}
+                                width="300"
+                                height="auto"
                             />
                         </div>
                     ))
